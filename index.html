@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.gstatic.com/s/e/notoemoji/latest/1f970/lottie.json"
+    />
+    <link rel="stylesheet" href="Emoji Swap style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Send an Invitation</h1>
+    <div>
+      <input
+        type="text"
+        id="senderName"
+        placeholder="Your Name"
+      />
+      <input
+        type="text"
+        id="inviteeName"
+        placeholder="Invitee's Name"
+      />
+      <input type="text" placeholder="Invitee's Phone Number"  id="number"/>
+      <button id="inviteBtn" onclick="handleInvitee()">send invite</button>
+    </div>
+    <script>
+    //   function handleName(e) {
+    //     document.getElementById("name").value = e.target.value;
+    //   }
+    var letters = "";
+  while (letters.length < 6) {
+    // generate a random letter
+    var randomNum = Math.floor(Math.random() * 26);
+    var letter = String.fromCharCode(randomNum + 97);
+    // add the letter to the string if it hasn't been added already
+    if (letters.indexOf(letter) === -1) {
+      letters += letter;
+    }
+  }
+  console.log(letters) ;
+      function handleInvitee() {
+        let sender = document.getElementById("senderName").value;
+        let person = document.getElementById("inviteeName").value;
+        let number = document.getElementById("number").value;
+        // let gameId = Math.floor((Math.random())*100000)
+        let gameid = letters
+        fetch("https://dd9a-197-211-63-66.eu.ngrok.io/sms", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body:JSON.stringify({sender, person, number, gameid})
+        });
+      }
+    </script>
+    </script>
+  </body>
+</html>
