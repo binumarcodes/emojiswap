@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Candy Crush</title>
-    <link rel="stylesheet" href="https://fonts.gstatic.com/s/e/notoemoji/latest/1f970/lottie.json">
-    <link rel="stylesheet" href="Emoji Swap style.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.gstatic.com/s/e/notoemoji/latest/1f970/lottie.json"
+    />
+    <link rel="stylesheet" href="Emoji Swap style.css" />
     <script src="Emoji Swap app.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="grid">
-            <p id="time">60s</p>
-        </div>
-        <div class="right">
-            <h2>Emoji Swap</h2>
+      <div class="grid">
+        <p id="time">60s</p>
+      </div>
+      <div class="right">
+        <h2>Emoji Swap</h2>
 
-            <div class="score-board">
-                <h3>Score</h3>
-                <h1 id="score"></h1>
-            </div>
-
-            <div class="high-score">
-                <p>High Score</p>
-                <p id="high-number"></p>
-            </div>
+        <div class="score-board">
+          <h3>Score</h3>
+          <h1 id="score" onchange="{handleScoreChange(event)}"></h1>
         </div>
-      
 
-        <div class="gameOverDashBoard">
-            <div class="gameOverDisplayer">
-                <h1>Game Over</h1>
-                <img src="" alt="Reaction" id="finalEmoji">
-                <div class="scores">
-                    <h4>Score: <span id="gameOverScore"></span></h4>
-                    <h4>High-Score: <span id="gameOverHighScore"></span></h4>
-                </div>
-             
-                <button id="replay" onclick="replay()">Replay</button>
-            </div>
+        <div class="high-score">
+          <p>High Score</p>
+          <p id="high-number"></p>
         </div>
+      </div>
+
+      <div class="gameOverDashBoard">
+        <div class="gameOverDisplayer">
+          <h1>Game Over</h1>
+          <img src="" alt="Reaction" id="finalEmoji" />
+          <div class="scores">
+            <h4>Score: <span id="gameOverScore"></span></h4>
+            <h4>High-Score: <span id="gameOverHighScore"></span></h4>
+          </div>
+
+          <button id="replay" onclick="replay()">Replay</button>
+        </div>
+      </div>
     </div>
-   
     <!-- https://aka.ms/vscode-faq-old-windows -->
-</body>
+    <script>
+      function handleScoreChange(e) {
+        console.log(e.target.value);
+      }
+    </script>
+  </body>
 </html>
