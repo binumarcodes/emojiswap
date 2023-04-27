@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkColumnforThree();
   }, 100);
 
-  var duration = 10;
+  var duration = 30;
   const gameOverDashBoard = document.querySelector(".gameOverDashBoard");
   const gameOverScore = document.getElementById("gameOverScore");
   // const gameOverHighScore = document.getElementById("gameOverHighScore");
